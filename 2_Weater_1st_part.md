@@ -3,7 +3,7 @@
 V tomto díle začneme psát naší ukázkovou aplikaci. Povedeme Vás od úplného začátku až po finální deployment do produkce. V průbehu si ukážeme využití všech hlavních vlastností IMA.js a jak vytvořit často používané prvky webových aplikací.
 
 Úkázková aplikace bude zobrazovat počasí v místě, které:
-- uživatel vyhladá pomocí našeho vyhladávání
+- uživatel vyhledá pomocí našeho vyhladávání
 - bude zadáno v URL parametru (SEO optimalizace)
 - uživatel nastaví a uloží ho do cookies.
 - je nastaveno v aplikaci jako výchozí, pokud se nepoužije žádná z výše uvedených možností.

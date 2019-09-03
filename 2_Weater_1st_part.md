@@ -1,6 +1,6 @@
 # Díl 2. - Setup aplikace a vytvoření modelů
 
-V tomto díle začneme psát naší ukázkovou aplikaci. Povedeme vás od úplného začátku až po finální deployment do produkce. V průbehu si ukážeme využití všech hlavních vlastností IMA.js a jak vytvořit často používané prvky webových aplikací.
+V tomto díle začneme psát naší ukázkovou aplikaci. Povedeme Vás od úplného začátku až po finální deployment do produkce. V průbehu si ukážeme využití všech hlavních vlastností IMA.js a jak vytvořit často používané prvky webových aplikací.
 
 Úkázková aplikace bude zobrazovat počasí v místě, které:
 - uživatel vyhladá pomocí našeho vyhladávání
@@ -44,7 +44,7 @@ Pro naši aplikaci postačí základní [Hello World](https://imajs.io/examples/
 V adresáři naší aplikace vzniklo několik pod-adresářů: `app`, `build`, `node_modules` a `server`. My se budeme zabývat pouze adresářem `app` (ostatní jsou vysvětleny svým názvem).
 
 - `assets` - obsahuje soubory, které jsou zpracovány pre-processory a zkopírovány do `build` adresáře.
-  - `less` - LESS soubory definující obecné pravidla, makra, mixins a základní strukturu UI.
+  - `less` - LESS soubory definující obecná pravidla, makra, mixins a základní strukturu UI.
   - `static` - jakékoliv soubory, které nepotřebují pre-processing (JS soubory 3. stran, obrázky, ...)
 
 - `component` - naše React komponenty, které budeme používat ve views. Více o komponentách si řekneme v 2. díle tohoto seriálu.
@@ -54,11 +54,11 @@ V adresáři naší aplikace vzniklo několik pod-adresářů: `app`, `build`, `
   - `home` - hlavní stránka aplikace
   - `notFound` - stránka, která se zobrazí pokud uživatel zadá URL na neexistující routu.
 
-Adresáře `assets` a `config` jsou povinné a měly vy se v aplikaci vždy nacházet. Ostatní jsou volitelné a můžete si je přejmenovat. Je však potřeba upravit některé konfigurace a přihlížet k tomu v následném vývoji aplikace.
+Adresáře `assets` a `config` jsou povinné a měly by se v aplikaci vždy nacházet. Ostatní jsou volitelné a můžete si je přejmenovat. Je však potřeba upravit některé konfigurace a přihlížet k tomu v následném vývoji aplikace.
 
 ## Modely
 
-Modely jsou způsob jak v IMA.js aplikaci pracovat s daty. Pomocí modelů se data načítají, odesílají a tranformují. V našem případě budeme využívat základní sestavu modelů (`Service`, `Entity`, `Resource` a `Factory`).
+Modely nám v IMA.js aplikacích umožǔjí pracovat s daty. Pomocí modelů se data načítají, odesílají a tranformují. V našem případě budeme využívat základní sestavu modelů (`Service`, `Entity`, `Resource` a `Factory`).
 - `Entity` představuje objekt držící data nějákého celku (uživatele, článku, ...).
 - `Factory` vytváří ze surových dat instance `Entity`.
 - `Resource` stahuje data ze serveru pomocí HTTP požadavků.
@@ -81,7 +81,7 @@ V souboru `weather-app/server/server.js` - funkce `runNodeApp` - najdeme řádek
 .use(environment.$Proxy.path + '/', proxy(environment.$Proxy.server, environment.$Proxy.options)
 ```
 
-Vidíme, že server používá [**Express** framework](https://expressjs.com/) a pro proxy jeden z jeho doplňků [**express-http-proxy**](https://www.npmjs.com/package/express-http-proxy). Nastavení proxy se nachází v souboru `weather-app/app/environment.js`. Soubor obsahuje jednoduchý Node.js modul, který vrací objekt. Hlavnímy klíči objektu jsou `prod`, `test` a `dev`. Tyto klíče představují nastavení pro jednotlivé vývojové prostředí s tím, že všechny vycházejí z `prod` prostředí. 
+Vidíme, že server používá [**Express** framework](https://expressjs.com/) a pro proxy jeden z jeho doplňků [**express-http-proxy**](https://www.npmjs.com/package/express-http-proxy). Nastavení proxy se nachází v souboru `weather-app/app/environment.js`. Soubor obsahuje jednoduchý Node.js modul, který vrací objekt. Hlavními klíči objektu jsou `prod`, `test` a `dev`. Tyto klíče představují nastavení pro jednotlivé vývojové prostředí s tím, že všechny vycházejí z `prod` prostředí. 
 
 > **Poznámka:** Tento styl konfigurace (prod - test - dev) si zapamatujte, neobjevuje se naposledy.
 
@@ -112,7 +112,7 @@ module.exports = (() => {
 
 #### 2. Načítání dat o předpovědi počasí
 
-V předchozím bodě si nastavili proxy, která poslouchá na URL `/api`. Aby jsme URL neopakovali v aplikaci několikrát přidáme ji do nastavení v souboru `weather-app/app/config/settings.js`. Zde se používá stejný styl konfigurace jako v `environment.js`.
+V předchozím bodě jsme si nastavili proxy, která poslouchá na URL `/api`. Aby jsme URL neopakovali v aplikaci několikrát přidáme ji do nastavení v souboru `weather-app/app/config/settings.js`. Zde se používá stejný styl konfigurace jako v `environment.js`.
 
 ```javascript
 // app/config/settings.js
@@ -130,7 +130,7 @@ export default (ns, oc, config) => {
 }
 ```
 
-V adresáři `weather-app/app/model` vytvoříme pod-adresář pro předpověď počasí - `forecast`. V tomto adresáři vytvoříme soubory `ForecastService.js`, `ForecastResource.js`, `ForecastFactory.js` a `ForecastEntity.js`.
+V adresáři `weather-app/app/model` vytvoříme podadresář pro předpověď počasí - `forecast`. V tomto adresáři vytvoříme soubory `ForecastService.js`, `ForecastResource.js`, `ForecastFactory.js` a `ForecastEntity.js`.
 
 Začneme vytvořením **ForecastResource**. V aplikaci IMA.js funguje **DI (Dependency Injection)** zkrz **OC (Object Container)**. Více o **OC** a **DI** se dočtete v [dokumentaci](https://github.com/seznam/IMA.js-skeleton/wiki/Object-Container#1-dependency-injection)
 
@@ -177,7 +177,7 @@ export default class ForecastFactory {
 }
 ```
 
-**ForecastEntity** je pouze vezme data z construktoru a vytvoří si z nich vlastní properties.
+**ForecastEntity** pouze vezme data z constructoru a vytvoří si z nich vlastní properties.
 
 ```javascript
 // app/model/forecast/ForecastEntity.js

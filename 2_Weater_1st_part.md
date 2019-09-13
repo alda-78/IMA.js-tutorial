@@ -47,7 +47,7 @@ V adresáři naší aplikace vzniklo několik pod-adresářů: `app`, `build`, `
   - `less` - LESS soubory definující obecná pravidla, makra, mixins a základní strukturu UI.
   - `static` - jakékoliv soubory, které nepotřebují pre-processing (JS soubory 3. stran, obrázky, ...)
 
-- `component` - naše React komponenty, které budeme používat ve views. Více o komponentách si řekneme v 2. díle tohoto seriálu.
+- `component` - naše React komponenty, které budeme používat ve views. Více o komponentách si řekneme v 3. díle tohoto seriálu.
 - `config` - konfigurační soubory aplikace. Nyní se konfigurací nebudeme zabývat a ukážeme si jednotlivé možnosti až je budeme potřebovat v průběhu vytváření aplikace.
 - `page` - controllery, views a LESS soubory k views.
   - `error` - stránka, která se zobrazí pokud se vyskytne chyba v průběhu aplikace.

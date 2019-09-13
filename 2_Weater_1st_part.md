@@ -217,7 +217,7 @@ export default class ForecastService {
     }
 ```
 
-Vytvořili jsme také model pro **geocoder** - vyhledávání místa podle názvu z URL. Nebudeme zde ale rozepisovat kompletní postup, protože se v mnohém shoduje s modelem pro předpověď počasí. Kompletní podobu **geocoder** modelu najdete v kódu ukázkové aplikace.
+Vytvořili jsme také model pro **geocoder** - vyhledávání místa podle názvu z URL. Nebudeme zde ale rozepisovat kompletní postup, protože se v mnohém shoduje s modelem pro předpověď počasí. Kompletní podobu **geocoder** modelu najdete v kódu [ukázkové aplikace](https://github.com/seznam/IMA.js-tutorial/tree/master/example-app/app/model/geocoder).
 
 
  

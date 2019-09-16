@@ -1,4 +1,4 @@
-# Díl 3. - Router -> Controller -> View -> Komponenta
+# Díl 3. - Načítání a vykreslování dat
 
 Když jsme si v předchozím díle zajistili data a jejich zpracování pomocí modelů, můžeme nyní začít s jejich zobrazováním.
 

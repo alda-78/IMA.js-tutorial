@@ -4,8 +4,8 @@ Když jsme si v předchozím díle zajistili data a jejich zpracování pomocí 
 
 ## Router
 
-Celý chod aplikae začíná zde. Pro příchozí HTTP požadavek se IMA.js snaží najít shodnou routu. Každá routa má přiřazený Controller a View, které se má v případě shody načíst a vyrenderovat.
-Seznam rout se nachází v konfiguračním souboru `app/config/routes.js`. Jednotlivé parametry routy si zde nebudeme popisovat, najdete je v [dokumentaci](https://github.com/seznam/IMA.js-skeleton/wiki/Routing). Doporučujeme si však dokumentaci routeru pročíst :smile:
+Celý chod aplikace začíná zde. Pro příchozí HTTP požadavek se IMA.js snaží najít shodnou routu. Každá routa má přiřazený Controller a View, který se má v případě shody načíst a vyrenderovat.
+Seznam rout se nachází v konfiguračním souboru `app/config/routes.js`. Jednotlivé parametry routy si zde nebudeme popisovat, najdete je v [dokumentaci](https://github.com/seznam/IMA.js-skeleton/wiki/Routing). Doporučujeme si však dokumentaci routeru pročíst.
 
 Pro naší aplikaci potřebujeme upravit pouze výchozí routu s názvem `home`. Abychom mohli vytvářet krásné SEO URL ve tvaru *weather.xyz/ostrava* nebo *weather.xyz/ceske-budejovice* přidáme do **path** parametr `:?location`.
 Pokud jste si četli dokumentaci, tak už víte, že `:` se v routě označuje parametr a `?` nepovinný parametr.

@@ -21,7 +21,7 @@ Pokud jste si četli dokumentaci, tak už víte, že `:` se v routě označuje p
 
 ## Controller
 
-Router předává slovo Controlleru, který byl přiřazený k shodné routě. Controller tímto začíná svůj [životní cyklus](https://github.com/seznam/IMA.js-skeleton/wiki/Controller-lifecycle). Pro nás je důležitá metoda `load()` ve které načteme všechna potřebná data. Teda né všechna, některá necháme, aby se načetla až na straně klienta.
+Router předává slovo Controlleru, který byl přiřazený k shodné routě. Controller tímto začíná svůj [životní cyklus](https://github.com/seznam/IMA.js-skeleton/wiki/Controller-lifecycle). Pro nás je důležitá metoda `load()`, ve které načteme všechna potřebná data. Tedy ne všechna, některá necháme, aby se načetla až na straně klienta.
 
 Než ale začneme s načítáním, potřebujeme Controlleru předat **ForecastService** a **GeoCoderService**, které jsme vytvořili v předchozím díle. Uděláme to pomocí DI.
 
@@ -94,7 +94,7 @@ load() {
 
 #### Donačítání dat
 
-Abychom nemuseli stahovat velké množství dat k vygenerování odpovědi ze serveru, můžeme odložit načítání dat na stranu klienta. Na serveru si tak stáhneme jen to nejnutnější k vytvoření smysluplnou odpovědi, kterou můžou přečíst i vyhledávače.
+Abychom nemuseli stahovat velké množství dat k vygenerování odpovědi ze serveru, můžeme odložit načítání dat na stranu klienta. Na serveru si tak stáhneme jen to nejnutnější k vytvoření smysluplné odpovědi, kterou můžou přečíst i vyhledávače.
 
 K tomuto účelu se používá metoda Controlleru zvaná `activate()`. Zavolá se při oživení aplikace nebo aktivaci příslušné routy na straně klienta. Můžeme v ní tak načítat data pro první zobrazení ale i při každém vstupu na stránku.
 
@@ -147,7 +147,7 @@ setMetaParams(loadedResources, metaManager, router, dictionary, settings) {
 Načtená data jsou předávána jako **props** speciální React komponentě. Tato komponenta se nazývá View. Od klasické komponenty, kterou si budeme popisovat v následujícím bodě, se nijak zásadně neliší.
 **HomeView** se bude starat o zobrazení názvu města a předpovědi počasí. Každý den předpovědi bude renderovaný samostatnou komponentou, kterou pojmenujeme **ForecastDay**. Musíme také vyřešit stav, kdy změníme město a data se začnou načítat znovu (na straně klienta). Po určitý čas nebudeme mít dostupná žádná data a musíme vykreslit načítání. Práci si ulehčíme použitím předpřipravených komponent z balíčku IMA-UI-atoms.
 
-1. Nejprve si teda nainstalujeme `npm install --save ima-ui-atoms`.
+1. Nejprve si tedy nainstalujeme `npm install --save ima-ui-atoms`.
 2. V **app/build.js** přidáme `'ima-ui-atoms'` do **let vendors.common** a `'./node_modules/ima-ui-atoms/dist/*.less',` do `let less`
 
 ```diff
@@ -224,7 +224,7 @@ export default class HomeView extends AbstractComponent {
 #### Donačtená data
 
 Jak už víme, tak detailní předpověď počasí pro jeden den donačítáme na straně klienta. Metoda `_renderDetailedForecast()` v našem View bude zobrazovat tato data.
-Bohužel API, které využíváme vrací detailní předpověď pro všechny dny předpovědi. My si však tato zpracujeme a vykreslíme jen ty, které se týkají zvoleného dne (`activeDay`).
+Bohužel API, které využíváme vrací detailní předpověď pro všechny dny předpovědi. My si však tato zpracujeme a vykreslíme jen ta, která se týkají zvoleného dne (`activeDay`).
 
 ```javascript
 _renderDetailedForecast() {

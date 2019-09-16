@@ -1,4 +1,4 @@
-# Díl 3. - Načítání a vykreslování dat
+# Díl 3. - Načítání a vykreslování dataaa
 
 Když jsme si v předchozím díle zajistili data a jejich zpracování pomocí modelů, můžeme nyní začít s jejich zobrazováním.
 

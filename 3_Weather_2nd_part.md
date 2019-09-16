@@ -210,14 +210,14 @@ export default class HomeView extends AbstractComponent {
     }
 
     onDayClick(event, index) {
-		event.preventDefault();
+	event.preventDefault();
 
-		const { forecast } = this.props;
+	const { forecast } = this.props;
 
-		if (forecast.daily[index] !== undefined) {
-			this.setState({ activeDay: index });
-		}
+	if (forecast.daily[index] !== undefined) {
+		this.setState({ activeDay: index });
 	}
+    }
 }
 ```
 
@@ -239,7 +239,7 @@ _renderDetailedForecast() {
         <div className={this.cssClasses('forecast-detail')}>
             { forecastDetail
                 .filter(day => day.dayId === activeDay) // vyfiltrujeme si data pro zvolený den
-                ..map((day, index) => (
+                .map((day, index) => (
                     <ForecastDetail
                         key = { activeDay + index }
                         { ...day }/>ą

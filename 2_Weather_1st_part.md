@@ -21,18 +21,17 @@ K vývoji budete potřebovat:
 ```console
 cd <-- Váš adresář kde máte projekty -->
 
-git clone https://github.com/seznam/IMA.js-skeleton.git weather-app
+curl -L https://github.com/seznam/IMA.js-skeleton/tarball/master | tar xz
+
+mv seznam-IMA.js-skeleton-### weather-app
 
 cd weather-app
-
-git remote set-url origin <-- Váš remote Git repozitář -->
-
-git remote -v # jen pro kontrolu
 
 npm install --global gulp
 
 npm install
 ```
+Pokud nemáte nainstalovaný **cURL** nebo **wget**, můžete použít [přímý odkaz ke stažení](https://github.com/seznam/IMA.js-skeleton/archive/master.zip).
 
 Tímto máme vytvořený skeleton aplikace a nainstalované závislosti. Skeleton doplníme o demo soubory, které nám pomohou odstartovat vývoj aplikace.
 IMA.js nabízí 3 demo *"aplikace"*, ze kterých si můžete vybrat. Jejich ukázky najdete na [imajs.io/examples](https://imajs.io/examples).

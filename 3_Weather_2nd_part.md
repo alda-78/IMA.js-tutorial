@@ -46,9 +46,9 @@ export default class HomeController extends AbstractController {
 ```
 
 Jak vidíte, nepředali jsme si jen zmiňované Services, ale i něco navíc. Konkrétně:
- - Router - budeme ho potřebovat pro přesměrování při zadání špatného názvu města.
- - CookieStorage - vytáhnutí informací o městě, které si uživatel nastavil (více si o tom povíme v 5. díle).
- - Nastavení `defaultLocation` - jak jsme popisovali v úvodu 2. dílu, pokud nebudeme mít žádný uživatelský vstup, použijeme výchozí město. Řetězec `$Settings` představuje soubor `app/config/settings.js`. Zbytek řetězce je cesta k nastavení.
+ - **Router** - budeme ho potřebovat pro přesměrování při zadání špatného názvu města.
+ - **CookieStorage** - vytáhnutí informací o městě, které si uživatel nastavil (více si o tom povíme v 5. díle).
+ - **Nastavení `defaultLocation`** - jak jsme popisovali v úvodu 2. dílu, pokud nebudeme mít žádný uživatelský vstup, použijeme výchozí město. Řetězec `$Settings` představuje soubor `app/config/settings.js`. Zbytek řetězce je cesta k nastavení.
 
 ```javascript
 load() {
@@ -114,7 +114,7 @@ activate() {
 
 #### Meta informace
 
-V Controlleru využijeme ještě jednu metodu - `setMetaParams()`. Ta nám dovoluje nastavit meta informace do záhlaví stránky. Nastavené informace se potom využívají v [**DocumentView**](https://github.com/seznam/IMA.js-tutorial/tree/master/example-app/app/component/document/DocumentView.jsx)(komponenta, která zajišťujě render hlavního HTML markupu).
+V Controlleru využijeme ještě jednu metodu - `setMetaParams()`. Ta nám dovoluje nastavit meta informace do záhlaví stránky. Nastavené informace se potom využívají v [**DocumentView**](https://github.com/seznam/IMA.js-tutorial/tree/master/example-app/app/component/document/DocumentView.jsx) (komponenta, která zajišťujě render hlavního HTML markupu).
 
 ```javascript
 setMetaParams(loadedResources, metaManager, router, dictionary, settings) {
